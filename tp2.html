@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html ng-app="testApp">
+<head>
+	<title></title>
+	<!-- // <script type="text/javascript" src="../js/angular.min.js"></script> -->
+	<link rel="stylesheet" type="text/css" href="../styles/bootstrap.min.css">
+</head>
+<style>
+	.error{
+		border: 1px red solid;
+	}
+</style>
+<body>
+	<div id="ex1" style="display:none; width:100%; text-align:center;">
+		<h1>Legacy JS</h1>
+		<input type="button" value="Contenu 1" onclick="f('Contenu 1')">
+		<input type="button" value="Contenu 2" onclick="f('Contenu 2')">
+		<h2 id="content">Contenu 1</h2>
+		<script>
+			var f = function(str){
+				document.getElementById("content").innerHTML = str;
+			}
+		</script>
+	</div>
+	<div id="ex2">
+		<form>
+			<div class="form-group">
+				<label for="firstName">First Name*:&nbsp;</label><input onkeyup="validateFirstName()" name="firstName" type="text" id="firstName">
+			</div>
+			<div class="form-group">
+				<label for="lastName">Last Name:&nbsp;</label><input onkeyup="validateLastName()" name="lastName" type="text" id="lastName">
+			</div>
+			<div class="form-group">
+				<label for="email">Email:&nbsp;</label><input type="text" onkeyup="validateEmail()" name="email" id="email">
+			</div>
+			<div class="form-group">
+				<label for="age">Age:&nbsp;</label><input name="age" onkeyup="validateAge()"  type="text" id="age">
+			</div>
+			<input type="button" value="validate" onclick="validate()">
+		</form>
+		<script type="text/javascript">
+			liveCheck = false;
+
+			// objet contenant tous les champs du formulaire plus la méthode de validation
+			var formulary = {
+				firstName : document.getElementById('firstName'),
+				lastName : document.getElementById('lastName'),
+				age : document.getElementById('age'),
+				email : document.getElementById('email'),
+				isValid : function(){
+					return(firstName.className.indexOf('error') == -1 && lastName.className.indexOf('error') == -1 && email.className.indexOf('error') == -1 && age.className.indexOf('error') == -1);
+				}
+			};
+
+			// méthode permettant de valider le first name
+			function validateFirstName(){
+				if(liveCheck){
+					if(!validateAlpha(firstName.value)){
+						console.log('firstName : error');
+						if(formulary.firstName.className.indexOf('error') == -1)
+							formulary.firstName.className += ' error';
+					}else{
+						console.log('firstName : ok');
+						formulary.firstName.className = formulary.firstName.className.replace( /(?:^|\s)error(?!\S)/g , '' );
+					}
+				}
+			}
+
+			// méthode permettant de valider le last name
+			function validateLastName(){
+				if(liveCheck){
+					if(!validateAlpha(formulary.lastName.value)){
+						console.log('lastName : error');
+						if(formulary.lastName.className.indexOf('error') == -1)
+							formulary.lastName.className += ' error';
+					}else{
+						console.log('lastName: ok');
+						formulary.lastName.className = formulary.lastName.className.replace( /(?:^|\s)error(?!\S)/g , '' );
+					}
+				}
+			}
+
+			// méthode permettant de valider l'age
+			function validateAge(){
+				if(liveCheck){
+					if(!validateNumbersOnly(formulary.age.value)){
+						console.log('Age : error');
+						if(formulary.age.className.indexOf('error') == -1)
+							formulary.age.className += ' error';
+					}else{
+						console.log('Age : ok');
+						formulary.age.className = formulary.age.className.replace( /(?:^|\s)error(?!\S)/g , '' );
+					}
+				}
+			}
+
+			// méthode permettant de valider l'email
+			function validateEmail(){
+				if(liveCheck){
+					if(!validateEmailFormat(formulary.email.value)){
+						console.log('Email : error');
+						if(formulary.email.className.indexOf('error') == -1)
+							formulary.email.className += ' error';
+					}else{
+						console.log('Email : ok');
+						formulary.email.className = formulary.email.className.replace( /(?:^|\s)error(?!\S)/g , '' );
+					}
+				}
+			}
+
+			// méthode permettant de vérigier que la chaine n'est composé que de lettres
+			var validateAlpha = function(str){
+				if(str && str.length > 0){
+					var onlyAplha = /^[a-zA-Z]+$/g;
+					if(!str.match(onlyAplha)){
+						return false;
+					}
+				}else{
+					return false;
+				}
+				return true;
+			};
+
+			// méthode permettant de vérifier que la chaîne ne contient que des chiffres
+			var validateNumbersOnly = function(str){
+				if(str && str.length > 0){
+					var numbersOnly = /^\d+$/g;
+					if(!str.match(numbersOnly)){
+						return false;
+					}
+				}else{
+					return false;
+				}
+				return true;
+			}
+
+			// méthode permettant de vérifier que la chaîne ne contient bien un email
+			var validateEmailFormat = function(str){
+				if(str && str.length > 0){
+					var mail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+					if(!str.match(mail)){
+						return false;
+					}
+				}else{
+					return false;
+				}
+				return true;
+			}
+
+			// méthode validant la conformité de l'ensemble du formulaire
+			var validate = function(){
+				liveCheck = true;
+				validateFirstName(); validateLastName(); validateAge(); validateEmail();
+
+				if(!formulary.isValid())
+					return;
+
+				alert('Let\'s do this');
+			}
+		</script>
+
+	</div>
+</body>
+</html>
