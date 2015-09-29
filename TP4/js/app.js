@@ -30,18 +30,18 @@ app.controller('contactController',function($scope){
 		message : '',
 		tel : '',
 		mobile : '',
-	}
+	};
 
 	$scope.regexp = {
 		tel : /^$|^0[1234589]\d{8}$/i,
 		mobile : /^$|^0[67]\d{8}$/i,
 		name : /^[a-zA-Z ]+$/,
 		email : /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
-	}
+	};
 
 	$scope.submitForm = function(isValid){
 		if(isValid){
 			alert('Submitted');
 		}
-	}
+	};
 });
