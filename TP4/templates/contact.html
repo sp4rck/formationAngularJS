@@ -3,18 +3,28 @@
 	<form name="contactForm" novalidate ng-submit="submitForm(contactForm.$valid)" class="simple-form">
 		<div class="form-group row">
 			<label class="col-xs-3" for="firstName">First Name:*</label>
-			<input class="col-xs-3" type="text" id="firstName" ng-pattern="/^[a-zA-Z ]+$/" name="firstName" ng-model="formulary.firstName" required/>
+			<input class="col-xs-3" type="text" id="firstName" ng-pattern="regexp.name" name="firstName" ng-model="formulary.firstName" required/>
 			<span  class="col-xs-5 error" ng-show="contactForm.firstName.$invalid">Your first name is required and only composed of letters.</span>
 		</div>
 		<div class="form-group row">
 			<label class="col-xs-3"  for="lastName">Last Name:*</label>
-			<input class="col-xs-3"  type="text" id="lastName" name="lastName" ng-pattern="/^[a-zA-Z ]+$/" ng-model="formulary.lastName" required/>
+			<input class="col-xs-3"  type="text" id="lastName" name="lastName" ng-pattern="regexp.name" ng-model="formulary.lastName" required/>
 			<span  class="col-xs-5 error" ng-show="contactForm.lastName.$invalid">Your last name is required and only composed of letters.</span>
 		</div>
 		<div class="form-group row">
 			<label class="col-xs-3" for="email">Email:</label>
-			<input class="col-xs-3" type="text" ng-pattern="/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i" id="email" name="email" ng-model="formulary.email"/>
+			<input class="col-xs-3" type="text" ng-pattern="regexp.email" id="email" name="email" ng-model="formulary.email"/>
 			<span class="col-xs-5 error" ng-show="contactForm.email.$invalid">Email is not valid</span>
+		</div>
+		<div class="form-group row">
+			<label class="col-xs-3" for="tel">Tel:</label>
+			<input class="col-xs-3" type="text" ng-pattern="regexp.tel" id="tel" name="tel" ng-model="formulary.tel"/>
+			<span class="col-xs-5 error" ng-show="contactForm.tel.$invalid">Tel phone number is not valid</span>
+		</div>
+		<div class="form-group row">
+			<label class="col-xs-3" for="mobile">Mobile:</label>
+			<input class="col-xs-3" type="text" ng-pattern="regexp.mobile" id="mobile" name="mobile" ng-model="formulary.mobile"/>
+			<span class="col-xs-5 error" ng-show="contactForm.mobile.$invalid">Mobile phone number is not valid</span>
 		</div>
 		<div class="form-group row">
 			<label class="col-xs-3" for="message">Message:*</label>
