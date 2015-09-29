@@ -4,12 +4,12 @@
 		<div class="form-group row">
 			<label class="col-xs-3" for="firstName">First Name:*</label>
 			<input class="col-xs-3" type="text" id="firstName" ng-pattern="/^[a-zA-Z ]+$/" name="firstName" ng-model="formulary.firstName" required/>
-			<span  class="col-xs-5 error" ng-show="contactForm.firstName.$invalid">You first name is required and only composed of letters.</span>
+			<span  class="col-xs-5 error" ng-show="contactForm.firstName.$invalid">Your first name is required and only composed of letters.</span>
 		</div>
 		<div class="form-group row">
 			<label class="col-xs-3"  for="lastName">Last Name:*</label>
 			<input class="col-xs-3"  type="text" id="lastName" name="lastName" ng-pattern="/^[a-zA-Z ]+$/" ng-model="formulary.lastName" required/>
-			<span  class="col-xs-5 error" ng-show="contactForm.lastName.$invalid">You last name is required and only composed of letters.</span>
+			<span  class="col-xs-5 error" ng-show="contactForm.lastName.$invalid">Your last name is required and only composed of letters.</span>
 		</div>
 		<div class="form-group row">
 			<label class="col-xs-3" for="email">Email:</label>
