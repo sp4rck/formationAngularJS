@@ -1,0 +1,11 @@
+<div>
+<h2>List Filter</h2>
+<label>Search: </label><input ng-model="searchText"/>
+<table id="searchTextResults">
+	<tr><th>Name</th><th>Phone</th></tr>
+	<tr ng-repeat="friend in friends | filter:searchText">
+		<td>{{friend.name}}</td>
+		<td>{{friend.phone}}</td>
+	</tr>
+</table>
+</div>

@@ -1,0 +1,25 @@
+<div>
+	<form name="contactForm" novalidate ng-submit="submitForm(contactForm.$valid)" class="simple-form">
+		<div class="form-group row">
+			<label class="col-xs-3" for="firstName">First Name:</label>
+			<input class="col-xs-3" type="text" id="firstName" ng-pattern="/^[a-zA-Z ]+$/" name="firstName" ng-model="formulary.firstName" required/>
+			<span  class="col-xs-3" ng-show="contactForm.firstName.$invalid">You first name is required and only composed of letters.</span>
+		</div>
+		<div class="form-group row">
+			<label class="col-xs-3"  for="lastName">Last Name:</label>
+			<input class="col-xs-3"  type="text" id="lastName" name="lastName" ng-pattern="/^[a-zA-Z ]+$/" ng-model="formulary.lastName" required/>
+			<span  class="col-xs-3" ng-show="contactForm.lastName.$invalid">You last name is required and only composed of letters.</span>
+		</div>
+		<div class="form-group row">
+			<label class="col-xs-3" for="email">Email:</label>
+			<input class="col-xs-3" type="text" ng-pattern="/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i" id="email" name="email" ng-model="formulary.email"/>
+			<span class="col-xs-3" ng-show="contactForm.email.$invalid">Email is not required, but if you want to give one, you should give a correct one !</span>
+		</div>
+		<div class="form-group">
+			<label for="message">Message:</label>
+			<textarea required ng-minlength="10" rows="4" cols="50" id="message" name="message" ng-model="formulary.message"></textarea>
+			<p ng-show="contactForm.message.$invalid">Your message should be at least 10 character longs</p>
+		</div>
+		<button type="submit" class="btn btn-primary" ng-disabled="contactForm.$invalid">Submit</button>
+	</form>
+</div>
