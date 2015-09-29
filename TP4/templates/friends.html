@@ -1,11 +1,23 @@
 <div>
-<h2>List Filter</h2>
-<label>Search: </label><input ng-model="searchText"/>
-<table id="searchTextResults">
-	<tr><th>Name</th><th>Phone</th></tr>
-	<tr ng-repeat="friend in friends | filter:searchText">
-		<td>{{friend.name}}</td>
-		<td>{{friend.phone}}</td>
-	</tr>
-</table>
+	<div class="container-fluid" style="margin-bottom:2%;">
+		<h2 class="row">List Filter</h2>
+		<label class="row">Search: </label>
+		<div class="row">
+			<input  class="form-control" ng-model="searchText"/>
+		</div>
+	</div>
+	<div class="container-fluid" style="border:1px grey solid" id="searchTextResults">
+		<div class="row" id="header">
+			<h2 class="col-xs-6" >Name</h2>
+			<h2 class="col-xs-6">Phone</h2>
+		</div>
+		<div class="row" ng-repeat="friend in friends | filter:searchText">
+			<div class="col-xs-6" >{{friend.name}}</div>
+			<div class="col-xs-6" >{{friend.phone}}</div>
+		</div>
+		<form ng-show="searchText=='' || searchText==undefined" name="newFriendForm"class="row simple-form" novalidate ng-submit="addFriend(newFriendForm.$valid)">
+			<div class="col-xs-6"><input  class="form-control" style="width:80%; display:inline;" ng-model="friend.name" ng-pattern="regexp.name" name="name" type="text" ng-required="newFriendForm.name.$dirty || newFriendForm.phone.$dirty"/></div>
+			<div class="col-xs-6"><input class="form-control" style="width:80%; display:inline;" ng-model="friend.phone" name="phone" ng-pattern="regexp.phone" type="text" ng-required="newFriendForm.name.$dirty || newFriendForm.phone.$dirty"/><button type="submit" style="margin-left:2%;" ng-disabled="newFriendForm.$invalid">Add</button></div>
+		</form>
+	</div>
 </div>
