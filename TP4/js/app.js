@@ -28,6 +28,8 @@ app.controller('contactController',function($scope){
 		lastName : '',
 		email : '',
 		message : '',
+		tel : '',
+		mobile : '',
 	}
 
 	$scope.regexp = {
