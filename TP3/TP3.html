@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="contactForm">
+<head>
+	<!-- Définition méta pour les accents et pour l'affichage sur device -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript" src="../js/angular.min.js"></script>
+</head>
+<body>
+	<!-- Page Content : Utilisation class css bootstrapp -->
+	<div class="jumbotron col-md-4 col-md-offset-4">		
+		<div>
+			<h2>Currency format</h2>
+			<input type="number" ng-model="amout"> <br> default currency symbol ($): <span id="currencyDefault">{{amout | currency}}</span><br>
+		</div>
+		<div>
+			<h2>Filter to uppercase</h2>
+			<div><input type="text" ng-model="userInput"></div>
+			<div>Votre input en majuscule : {{userInput | uppercase}}</div>
+		</div>
+		<div>
+			<h2>List Filter</h2>
+			<div ng-init="friends = [{name:'John', phone:'555-1276'},
+			{name:'Mary', phone:'800-BIG-MARY'},
+			{name:'Mike', phone:'555-4321'},
+			{name:'Adam', phone:'555-5678'},
+			{name:'Julie', phone:'555-8765'},
+			{name:'Juliette', phone:'555-5678'}]"></div>
+			<label>Search: <input ng-model="searchText"></label>
+			<table id="searchTextResults">
+				<tr><th>Name</th><th>Phone</th></tr>
+				<tr ng-repeat="friend in friends | filter:searchText">
+					<td>{{friend.name}}</td>
+					<td>{{friend.phone}}</td>
+				</tr>
+			</table>
+			<hr>
+			<label>Any: <input ng-model="search.$"></label> <br>
+			<label>Name only <input ng-model="search.name"></label><br>
+			<label>Phone only <input ng-model="search.phone"></label><br>
+			<label>Equality <input type="checkbox" ng-model="strict"></label><br>
+			<table id="searchObjResults">
+				<tr><th>Name</th><th>Phone</th></tr>
+				<tr ng-repeat="friendObj in friends | filter:search:strict">
+					<td>{{friendObj.name}}</td>
+					<td>{{friendObj.phone}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

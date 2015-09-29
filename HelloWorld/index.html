@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app>
+	<head>
+		<!-- Définition méta pour les accents et pour l'affichage sur device -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Titre de l'application -->
+		<title>Application Exemple AngularJS</title>
+		
+		<!-- Import css -->
+		<link rel="stylesheet" href="../styles/bootstrap.min.css">
+		
+		<!-- Import js -->
+		<script src="../js/angular.min.js"></script>
+		
+		<script>
+		</script>
+		
+	</head>
+	
+	<body>
+		<!-- Page Content : Utilisation class css bootstrapp -->
+		<div class="jumbotron col-md-4 col-md-offset-4">
+		  
+		  <label for="name">Name: </label>
+		  
+		  <input type="text" ng-model="yourName" placeholder="Enter a name here">
+		  
+		  <!-- Text reprenant automatiquement le contenu du champ yourName -->
+		  <h1>Hello {{yourName}}!</h1>
+		</div>
+	</body>
+
+</html>
