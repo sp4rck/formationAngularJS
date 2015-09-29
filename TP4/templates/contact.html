@@ -19,7 +19,7 @@
 		<div class="form-group row">
 			<label class="col-xs-3" for="message">Message:*</label>
 			<textarea clas="col-xs-8" required ng-minlength="10" rows="4" cols="50" id="message" name="message" ng-model="formulary.message"></textarea>
-			<p class="error" ng-show="contactForm.message.$invalid">Your message should be at least 10 character longs</p>
+			<p class="error" ng-show="contactForm.message.$invalid">Your message should be at least 10 characters long</p>
 		</div>
 		<div>* fields are required</div>
 		<button type="submit" class="btn btn-primary" ng-disabled="contactForm.$invalid">Submit</button>
