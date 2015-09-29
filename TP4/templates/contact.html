@@ -5,13 +5,13 @@
 			<label class="col-xs-3" for="firstName">First Name:*</label>
 			<input class="col-xs-3" type="text" id="firstName" ng-pattern="regexp.name" name="firstName" ng-model="formulary.firstName" required/>
 			<span  class="col-xs-5 error" ng-show="contactForm.firstName.$error.required">Your first name is required.</span>
-			<span  class="col-xs-5 error" ng-show="contactForm.firstName.$invalid && !contactForm.firstName.$error.required">Only letters are allowed.</span>
+			<span  class="col-xs-5 error" ng-show="contactForm.firstName.$error.pattern">Only letters are allowed.</span>
 		</div>
 		<div class="form-group row">
 			<label class="col-xs-3"  for="lastName">Last Name:*</label>
 			<input class="col-xs-3"  type="text" id="lastName" name="lastName" ng-pattern="regexp.name" ng-model="formulary.lastName" required/>
 			<span  class="col-xs-5 error" ng-show="contactForm.lastName.$error.required">Your first name is required.</span>
-			<span  class="col-xs-5 error" ng-show="contactForm.lastName.$invalid && !contactForm.lastName.$error.required">Only letters are allowed.</span>
+			<span  class="col-xs-5 error" ng-show="contactForm.firstName.$error.pattern">Only letters are allowed.</span>
 		</div>
 		<div class="form-group row">
 			<label class="col-xs-3" for="email">Email:</label>
