@@ -31,7 +31,7 @@
 		<div class="form-group row">
 			<label class="col-xs-3" for="message">Message:*</label>
 			<div class="col-xs-8">
-				<textarea class="form-control" required ng-minlength="10" rows="4" cols="50" id="message" name="message" ng-model="formulary.message"></textarea>
+				<textarea style="resize:none;" class="form-control" required ng-minlength="10" rows="4" cols="50" id="message" name="message" ng-model="formulary.message"></textarea>
 				<div class="error" ng-show="contactForm.message.$invalid">Your message should be at least 10 characters long</div>
 			</div>
 		</div>
