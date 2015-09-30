@@ -4,11 +4,11 @@
 		<div class="form-group row">
 			<label class="col-xs-3" for="firstName">Name:*</label>
 			<div class="col-xs-3">
-				<input class="form-control" type="text" id="firstName" ng-pattern="regexp.name" name="firstName" ng-model="formulary.firstName" required/>
+				<input class="form-control" type="text" id="firstName" ng-pattern="regexp.name" name="firstName" ng-model="formulary.name" required/>
 				<span ng-show="contactForm.firstName.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
 				<span ng-show="contactForm.firstName.$invalid" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
 			</div>
-			<span  class="col-xs-5 error" ng-show="contactForm.firstName.$error.required">Your first name is required.</span>
+			<span  class="col-xs-5 error" ng-show="contactForm.firstName.$error.required">Your name is required.</span>
 			<span  class="col-xs-5 error" ng-show="contactForm.firstName.$error.pattern">Only letters are allowed.</span>
 		</div>
 		
@@ -34,7 +34,7 @@
 		<div class="form-group row">
 			<label class="col-xs-3" for="mobile">Position:</label>
 			<div class="col-xs-3">
-				<select class="form-control" ng-model="selectedPositionOption" ng-options="option.label for option in selectPositionOptions track by option.id"></select>
+				<select class="form-control" ng-model="formulary.position" ng-options="option.label for option in selectPositionOptions track by option.id"></select>
 			</div>
 		</div>
 		<div class="form-group row">

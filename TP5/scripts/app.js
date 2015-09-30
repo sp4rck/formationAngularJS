@@ -92,10 +92,7 @@ app.controller('form1Controller',function($scope, regexpFactory){
 	$scope.formulary = {
 		firstName : '',
 		lastName : '',
-		email : '',
-		message : '',
 		tel : '',
-		mobile : '',
 	};
 
 	$scope.regexp = regexpFactory.getRegexps();
@@ -109,15 +106,12 @@ app.controller('form1Controller',function($scope, regexpFactory){
 
 app.controller('form2Controller',function($scope, positionFactory, regexpFactory){
 	$scope.formulary = {
-		firstName : '',
-		lastName : '',
+		name : '',
 		email : '',
-		message : '',
 		tel : '',
 		mobile : '',
+		position : '',
 	};
-
-
 
 	$scope.regexp = regexpFactory.getRegexps();
 
@@ -129,20 +123,17 @@ app.controller('form2Controller',function($scope, positionFactory, regexpFactory
 
 	$scope.selectPositionOptions = positionFactory.getPositions();
 
-
-	$scope.selectedPositionOption = $scope.selectPositionOptions[0];
+	$scope.formulary.position = $scope.selectPositionOptions[0];
 });
 
 app.controller('form3Controller',function($scope, positionFactory, countryFactory, regexpFactory){
 	$scope.formulary = {
-		firstName : '',
-		lastName : '',
+		name : '',
 		email : '',
-		message : '',
 		tel : '',
-		mobile : '',
+		country : '',
+		position : '',
 	};
-
 
 	$scope.regexp = regexpFactory.getRegexps();
 
@@ -153,7 +144,7 @@ app.controller('form3Controller',function($scope, positionFactory, countryFactor
 	};
 
 	$scope.selectPositionOptions = positionFactory.getPositions();
-	$scope.selectedPositionOption = $scope.selectPositionOptions[0];
+	$scope.formulary.position = $scope.selectPositionOptions[0];
 
 	$scope.selectCountrieOptions = countryFactory.getCountries();
 });
