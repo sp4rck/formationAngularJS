@@ -17,7 +17,7 @@
 		</div>
 		<form ng-show="searchText=='' || searchText==undefined" name="newFriendForm"class="row simple-form" novalidate ng-submit="addFriend(newFriendForm.$valid)">
 			<div class="col-xs-6"><input  class="form-control" style="width:80%; display:inline;" ng-model="friend.name" ng-pattern="regexp.name" name="name" type="text" ng-required="newFriendForm.name.$dirty || newFriendForm.phone.$dirty"/></div>
-			<div class="col-xs-6"><input class="form-control" style="width:80%; display:inline;" ng-model="friend.phone" name="phone" ng-pattern="regexp.phone" type="text" ng-required="newFriendForm.name.$dirty || newFriendForm.phone.$dirty"/><button type="submit" style="margin-left:2%;" ng-disabled="newFriendForm.$invalid">Add</button></div>
+			<div class="col-xs-6"><input class="form-control" style="width:80%; display:inline;" ng-model="friend.phone" name="phone" ng-pattern="regexp.phone" type="text" ng-required="newFriendForm.name.$dirty || newFriendForm.phone.$dirty"/><button type="submit" style="margin-left:2%;" ng-disabled="newFriendForm.$invalid || newFriendForm.$pristine">Add</button></div>
 		</form>
 	</div>
 </div>
