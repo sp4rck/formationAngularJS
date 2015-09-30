@@ -18,7 +18,7 @@
 				<span ng-show="contactForm.lastName.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
 				<span ng-show="contactForm.lastName.$invalid" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
 			</div>
-			<span  class="col-xs-5 error" ng-show="contactForm.lastName.$error.required">Your first name is required.</span>
+			<span  class="col-xs-5 error" ng-show="contactForm.lastName.$error.required">Your last name is required.</span>
 			<span  class="col-xs-5 error" ng-show="contactForm.lastName.$error.pattern">Only letters are allowed.</span>
 		</div>
 		<div class="form-group row">
@@ -30,31 +30,6 @@
 			</div>
 			<span class="col-xs-5 error" ng-show="contactForm.tel.$invalid">Tel phone number is not valid</span>
 		</div>
-		<!-- <div class="form-group row">
-			<label class="col-xs-3" for="email">Email:</label>
-			<div class="col-xs-3">
-				<input class="form-control" type="text" ng-pattern="regexp.email" id="email" name="email" ng-model="formulary.email"/>
-				<span ng-show="contactForm.email.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-				<span ng-show="contactForm.email.$invalid" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-			</div>
-			<span class="col-xs-5 error" ng-show="contactForm.email.$invalid">Email is not valid</span>
-		</div> -->
-		<!-- <div class="form-group row">
-			<label class="col-xs-3" for="mobile">Mobile:</label>
-			<div class="col-xs-3">
-				<input class="form-control" type="text" ng-pattern="regexp.mobile" id="mobile" name="mobile" ng-model="formulary.mobile"/>
-				<span ng-show="contactForm.mobile.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-				<span ng-show="contactForm.mobile.$invalid" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-			</div>
-			<span class="col-xs-5 error" ng-show="contactForm.mobile.$invalid">Mobile phone number is not valid</span>
-		</div>
-		<div class="form-group row">
-			<label class="col-xs-3" for="message">Message:*</label>
-			<div class="col-xs-8">
-				<textarea style="resize:none;" class="form-control" required ng-minlength="10" rows="4" cols="50" id="message" name="message" ng-model="formulary.message"></textarea>
-				<div class="error" ng-show="contactForm.message.$invalid">Your message should be at least 10 characters long</div>
-			</div>
-		</div> -->
 		<div>* fields are required</div>
 		<button type="submit" class="btn btn-primary" ng-disabled="contactForm.$invalid">Submit</button>
 	</form>
