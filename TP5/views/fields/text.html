@@ -1,0 +1,13 @@
+<!-- template d'un champs input text -->
+<div ng-if="formName && params.inputName" class="form-group row">
+	<!-- label affiché avant l'input -->
+	<label class="col-xs-3" for="firstName">{{params.label}}</label>
+	<div class="col-xs-3">
+		<!-- input avec les paramètres passés dans le ng-include -->
+		<input class="form-control" ng-change="params.validatorFunc(formName.{{params.inputName}}, params.reference)" type="{{params.type}}" ng-pattern="params.pattern" name="{{params.inputName}}" ng-model="params.reference" ng-required="params.required"/>
+		<span ng-show="formName.{{params.inputName}}.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+		<span ng-show="formName.{{params.inputName}}.$invalid" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+	</div>
+	<span  class="col-xs-5 error" ng-if="params.requiredErrorMessage" ng-show="formName.{{params.inputName}}.$error.required">{{params.requiredErrorMessage}}</span>
+	<span  class="col-xs-5 error" ng-if="params.patternErrorMessage" ng-show="formName.{{params.inputName}}.$error.pattern">{{params.patternErrorMessage}}</span>
+</div>

@@ -1,0 +1,7 @@
+<!-- template pour un select sans option vide-->
+<div ng-if="formName && params.inputName" class="form-group row">
+	<label class="col-xs-3" for="mobile">{{params.label}}</label>
+	<div class="col-xs-3">
+		<select ng-required="params.required" class="form-control" ng-model="params.reference" ng-options="option.label for option in params.options track by option.id"></select>
+	</div>
+</div>
