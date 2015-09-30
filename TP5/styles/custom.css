@@ -1,0 +1,15 @@
+.error{
+	color: red;
+}
+
+.ng-invalid{
+	border: 1px red solid;
+}
+
+.simple-form{
+	border : 0;
+}
+
+.form-control-feedback{
+	right : 4%;
+}

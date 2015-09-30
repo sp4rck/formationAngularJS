@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<!-- Définition méta pour les accents et pour l'affichage sur device -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../styles/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="styles/custom.css">
+	<title></title>
+</head>
+<body>
+	<div class="jumbotron col-xs-8 col-xs-offset-2">
+		<ng-view></ng-view>
+		<hr>
+		<ul>
+			<li><a href="#/">Form1</a></li>
+			<li><a href="#/form2">Form2</a></li>
+			<li><a href="#/form3">Form3</a></li>
+		</ul>
+	</div>
+
+	<script type="text/javascript" src="../js/angular.min.js"></script>
+	<script type="text/javascript" src="../js/angular-route.min.js"></script>
+	<script type="text/javascript" src="scripts/app.js"></script>
+</body>
+</html>
