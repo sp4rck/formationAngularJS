@@ -1,0 +1,10 @@
+<div class="form-group row">
+	<label class="col-xs-3" for="email">Email:</label>
+	<div class="col-xs-3">
+		<input class="form-control" type="text" ng-pattern="regexp.email" id="email" name="email" ng-model="formulary.email" required/>
+		<span ng-show="contactForm.email.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+		<span ng-show="contactForm.email.$invalid" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+	</div>
+	<span  class="col-xs-5 error" ng-show="contactForm.email.$error.required">Email is required.</span>
+	<span class="col-xs-5 error" ng-show="contactForm.email.$error.pattern">Email is not valid</span>
+</div>

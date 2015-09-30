@@ -1,52 +1,11 @@
 <div>
 	<h2>Formulaire 2</h2>
 	<form name="contactForm" novalidate ng-submit="submitForm(contactForm.$valid)" class="simple-form form-horizontal">
-		<div class="form-group row">
-			<label class="col-xs-3" for="firstName">Name:*</label>
-			<div class="col-xs-3">
-				<input class="form-control" type="text" id="firstName" ng-pattern="regexp.name" name="firstName" ng-model="formulary.name" required/>
-				<span ng-show="contactForm.firstName.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-				<span ng-show="contactForm.firstName.$invalid" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-			</div>
-			<span  class="col-xs-5 error" ng-show="contactForm.firstName.$error.required">Your name is required.</span>
-			<span  class="col-xs-5 error" ng-show="contactForm.firstName.$error.pattern">Only letters are allowed.</span>
-		</div>
-		
-		<div class="form-group row">
-			<label class="col-xs-3" for="tel">Tel:</label>
-			<div class="col-xs-3">
-				<input class="form-control" type="text" ng-pattern="regexp.tel" id="tel" name="tel" ng-model="formulary.tel"/>
-				<span ng-show="contactForm.tel.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-				<span ng-show="contactForm.tel.$invalid" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-			</div>
-			<span class="col-xs-5 error" ng-show="contactForm.tel.$invalid">Tel phone number is not valid</span>
-		</div>
-		<div class="form-group row">
-			<label class="col-xs-3" for="mobile">Mobile:</label>
-			<div class="col-xs-3">
-				<input class="form-control" type="text" ng-pattern="regexp.mobile" id="mobile" name="mobile" ng-model="formulary.mobile" required/>
-				<span ng-show="contactForm.mobile.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-				<span ng-show="contactForm.mobile.$invalid" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-			</div>
-			<span class="col-xs-5 error" ng-show="contactForm.mobile.$error.required">Mobile phone number is required</span>
-			<span class="col-xs-5 error" ng-show="contactForm.mobile.$error.pattern">Mobile phone number is not valid</span>
-		</div>
-		<div class="form-group row">
-			<label class="col-xs-3" for="mobile">Position:</label>
-			<div class="col-xs-3">
-				<select class="form-control" ng-model="formulary.position" ng-options="option.label for option in selectPositionOptions track by option.id"></select>
-			</div>
-		</div>
-		<div class="form-group row">
-			<label class="col-xs-3" for="email">Email:</label>
-			<div class="col-xs-3">
-				<input class="form-control" type="text" ng-pattern="regexp.email" id="email" name="email" ng-model="formulary.email" required/>
-				<span ng-show="contactForm.email.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-				<span ng-show="contactForm.email.$invalid" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-			</div>
-			<span  class="col-xs-5 error" ng-show="contactForm.email.$error.required">Email is required.</span>
-			<span class="col-xs-5 error" ng-show="contactForm.email.$error.pattern">Email is not valid</span>
-		</div>
+		<div ng-include="'views/fields/fullName.html'"></div>
+		<div ng-include="'views/fields/tel.html'"></div>
+		<div ng-include="'views/fields/mobile.html'"></div>
+		<div ng-include="'views/fields/position.html'"></div>
+		<div ng-include="'views/fields/email.html'"></div>
 		<div>* fields are required</div>
 		<button type="submit" class="btn btn-primary" ng-disabled="contactForm.$invalid">Submit</button>
 	</form>

@@ -1,0 +1,9 @@
+<div class="form-group row">
+	<label class="col-xs-3" for="mobile">Country:</label>
+	<div class="col-xs-3">
+		<select class="form-control" name="country" ng-model="formulary.country" ng-options="option.label for option in selectCountrieOptions track by option.id" required>
+			<option value="">Choose...</option>
+		</select>
+	</div>
+	<span  class="col-xs-5 error" ng-show="contactForm.country.$error.required">Country is required.</span>
+</div>

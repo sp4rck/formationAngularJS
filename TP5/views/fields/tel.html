@@ -1,0 +1,9 @@
+<div class="form-group row">
+	<label class="col-xs-3" for="tel">Tel:</label>
+	<div class="col-xs-3">
+		<input class="form-control" type="text" ng-pattern="regexp.tel" id="tel" name="tel" ng-model="formulary.tel"/>
+		<span ng-show="contactForm.tel.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+		<span ng-show="contactForm.tel.$invalid" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+	</div>
+	<span class="col-xs-5 error" ng-show="contactForm.tel.$invalid">Tel phone number is not valid</span>
+</div>
